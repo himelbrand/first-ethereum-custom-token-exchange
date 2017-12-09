@@ -38,8 +38,8 @@ contract ERC20Interface {
 
 
 contract FixedSupplyToken is ERC20Interface {
-    string public constant symbol = "FIXED";
-    string public constant name = "Example Fixed Supply Token";
+    string public constant symbol = "HIMELBRAND";
+    string public constant name = "Himelbrand Fixed Supply Token";
     uint8 public constant decimals = 0;
     uint256 _totalSupply = 1000000;
 

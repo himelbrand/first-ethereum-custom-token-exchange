@@ -13,15 +13,15 @@ contract('MyExchangeDepositAndWithdrawal', accounts => {
         assert(true, 'Should of aproved Exchange to move 1000 tokens')
     })
     it('Add token to Exchange event should fire',async () => {
-        const tx = await myExchangeInstance.addToken('FIXED', myTokenInstance.address)
+        const tx = await myExchangeInstance.addToken('HIMELBRAND', myTokenInstance.address)
         assert.equal(tx.logs[0].event,'TokenAddedToSystem','TokenAddedToSystem should of fired')
     })
     it('Deposit token to Exchange event should fire',async () => {
-        const tx = await myExchangeInstance.depositToken('FIXED', 1000)
+        const tx = await myExchangeInstance.depositToken('HIMELBRAND', 1000)
         assert.equal(tx.logs[0].event,'DepositForTokenReceived','DepositForTokenReceived should of fired')
     })
     it('Withdraw token from Exchange event should fire',async () => {
-        const tx = await myExchangeInstance.withdrawToken('FIXED', 1000)
+        const tx = await myExchangeInstance.withdrawToken('HIMELBRAND', 1000)
         assert.equal(tx.logs[0].event,'WithdrawalToken','WithdrawalToken should of fired')
     })
     it('Deposit Ether to Exchange event should fire',async () => {

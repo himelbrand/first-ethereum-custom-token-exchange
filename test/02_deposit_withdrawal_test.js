@@ -14,9 +14,9 @@ contract('MyExchangeDepositAndWithdrawal', accounts => {
     it('Deploy Exchange and add Token', () => {
         return Exchange.deployed().then(instance => {
             myExchangeInstance = instance
-            return myExchangeInstance.addToken('FIXED', myTokenInstance.address).then(() => {
-                return myExchangeInstance.hasToken('FIXED').then(flag => {
-                    assert.equal(flag, true, 'Should of added FIXED symbol token')
+            return myExchangeInstance.addToken('HIMELBRAND', myTokenInstance.address).then(() => {
+                return myExchangeInstance.hasToken('HIMELBRAND').then(flag => {
+                    assert.equal(flag, true, 'Should of added HIMELBRAND symbol token')
                 })
             })
         })
@@ -28,10 +28,10 @@ contract('MyExchangeDepositAndWithdrawal', accounts => {
     })
     it('Deposit FixedSupplyToken in exchange', () => {
         let initialBalance
-        return myExchangeInstance.getBalance('FIXED').then(balance => {
+        return myExchangeInstance.getBalance('HIMELBRAND').then(balance => {
             initialBalance = balance.toNumber()
-            return myExchangeInstance.depositToken('FIXED', 1000).then(() => {
-                return myExchangeInstance.getBalance('FIXED').then(balance => {
+            return myExchangeInstance.depositToken('HIMELBRAND', 1000).then(() => {
+                return myExchangeInstance.getBalance('HIMELBRAND').then(balance => {
                     assert.equal(initialBalance + 1000, balance.toNumber(), 'Should of deposited 1000 tokens')
                 })
             })
@@ -39,10 +39,10 @@ contract('MyExchangeDepositAndWithdrawal', accounts => {
     })
     it('Withdraw FixedSupplyToken from exchange', () => {
         let initialBalance
-        return myExchangeInstance.getBalance('FIXED').then(balance => {
+        return myExchangeInstance.getBalance('HIMELBRAND').then(balance => {
             initialBalance = balance.toNumber()
-            return myExchangeInstance.withdrawToken('FIXED', 1000).then(() => {
-                return myExchangeInstance.getBalance('FIXED').then(balance => {
+            return myExchangeInstance.withdrawToken('HIMELBRAND', 1000).then(() => {
+                return myExchangeInstance.getBalance('HIMELBRAND').then(balance => {
                     assert.equal(initialBalance - 1000, balance.toNumber(), 'Should of withdrawed 1000 tokens')
                 })
             })
