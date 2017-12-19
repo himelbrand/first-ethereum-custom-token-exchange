@@ -1,10 +1,5 @@
 pragma solidity ^0.4.8;
 
-// ----------------------------------------------------------------------------------------------
-// Sample fixed supply token contract
-// Enjoy. (c) BokkyPooBah 2017. The MIT Licence.
-// ----------------------------------------------------------------------------------------------
-
 
 // ERC Token Standard #20 Interface
 // https://github.com/ethereum/EIPs/issues/20
